@@ -18,3 +18,9 @@ class ProductPage(BasePage):
         BOOK_NAME_ON_PAGE = self.browser.find_element(*ProductPageLocators.BOOK_NAME_ON_PAGE).text
         BOOK_NAME_IN_TEXT_MESSAGE = self.browser.find_element(*ProductPageLocators.BOOK_NAME_IN_TEXT_MESSAGE).text
         assert BOOK_NAME_ON_PAGE == BOOK_NAME_IN_TEXT_MESSAGE, f'book name on page [{BOOK_NAME_ON_PAGE}] not equals book name in text message [{BOOK_NAME_IN_TEXT_MESSAGE}]'
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.BOOK_NAME_IN_TEXT_MESSAGE), "Success message is presented, but should not be"
+
+    def should_not_appeared_success_message(self):
+        assert self.is_disappeared(*ProductPageLocators.BOOK_NAME_IN_TEXT_MESSAGE), "Success message is appeared, but should not be"
