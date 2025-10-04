@@ -36,7 +36,7 @@ cd Auto_tests_for_portfolio
 pip install -r requirements.txt
 ```
 
-## 🧪 Запуск тестов
+## ▶️ Запуск тестов
 
 Все тесты сразу:
 
