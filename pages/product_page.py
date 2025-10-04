@@ -9,9 +9,9 @@ class ProductPage(BasePage):
 
     def should_be_correct_cost_in_success_message(self):
         TEXT_PRICE = self.browser.find_element(*ProductPageLocators.PRICE).text
-        PRICE = re.search(r"\d+,\d+", TEXT_PRICE).group() #использование регулярных выражений для извлечения стоимости из текста
+        PRICE = re.search(r"\d+[.,]\d+", TEXT_PRICE).group() #использование регулярных выражений для извлечения стоимости из текста
         TEXT_BASKET_ITEM_PRICE = self.browser.find_element(*ProductPageLocators.BASKET_ITEM_PRICE).text
-        BASKET_ITEM_PRICE = re.search(r"\d+,\d+", TEXT_BASKET_ITEM_PRICE).group()
+        BASKET_ITEM_PRICE = re.search(r"\d+[.,]\d+", TEXT_BASKET_ITEM_PRICE).group()
         assert PRICE == BASKET_ITEM_PRICE, f'text in basket [{PRICE}] is not equals text in page[{BASKET_ITEM_PRICE}].'
 
     def should_be_correct_product_name_in_success_message(self):
