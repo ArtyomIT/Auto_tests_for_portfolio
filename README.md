@@ -55,15 +55,3 @@ pytest -v --tb=line --language=en -m need_review
 ```bash
 pytest -v --tb=short --language=ru -k "test_user_can_add_product_to_basket"
 ```
-
-## 📁 Структура проекта
-Auto_tests_for_portfolio/
-├── pages/
-│   ├── base_page.py
-│   └── login_page.py
-├── tests/
-│   └── test_product_page.py
-├── conftest.py
-├── pytest.ini
-├── requirements.txt
-└── README.md
