@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    CHECK_BASKET = (By.XPATH, '//a[@href = "/ru/basket/"]')
 
 # class MainPageLocators():
 #     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
@@ -19,3 +20,7 @@ class ProductPageLocators():
 
     BOOK_NAME_ON_PAGE = (By.XPATH, '//div[contains(@class, "product_main")]/h1')
     BOOK_NAME_IN_TEXT_MESSAGE = (By.XPATH, "//div[@class = 'alertinner ']//strong")
+
+class BasketPageLocators():
+    IS_BASKET_EMPTY = (By.XPATH, "//div[@id='content_inner']/p")
+    BASKET_ITEMS = (By.XPATH, "//div[@class='basket-items']")
